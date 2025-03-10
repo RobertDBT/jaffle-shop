@@ -1,5 +1,6 @@
 with
-
+-- I'm adding these lines to create 
+-- a merge conflict in the dbt Cloud IDE
 source as (
 
     select * from {{ source('ecom', 'raw_customers') }}
