@@ -9,6 +9,8 @@
     {# non-specified schemas go to the default target schema #}
     {% elif custom_schema_name is none %}
         {{ default_schema }}
+    {% elif env_var("DBT_FIRST_ENV_VAR") in ["job","123"] %}
+        {{ default_schema + env_var("DBT_FIRST_ENV_VAR") }}
 
 
     {# specified custom schema names go to the schema name prepended with the the default schema name in prod (as this is an example project we want the schemas clearly labeled) #}
