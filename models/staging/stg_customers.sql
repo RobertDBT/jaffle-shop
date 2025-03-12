@@ -8,6 +8,7 @@ source as (
 
 ),
 
+
 renamed as (
 
     select
@@ -22,5 +23,8 @@ renamed as (
     where id is not null
 
 )
+  {% macro some_macro(arg1, arg2) %}
+    {{ print("Running some_macro: " + env_var("DBT_FIRST_ENV_VAR")) }}
+  {% endmacro %}
 
 select * from renamed
