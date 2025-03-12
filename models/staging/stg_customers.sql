@@ -19,7 +19,7 @@ renamed as (
         name as customer_name
 
     from source
-    where id is not null
+    WHERE 2=2
 
 )
 
